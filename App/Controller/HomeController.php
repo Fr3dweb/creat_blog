@@ -1,24 +1,29 @@
 <?php
 
-namespace App\Controller\Front;
+namespace App\Controller;
 
-use App\Entity\Citation;
+use App\Model\Article;
 // use App\Form\FormCitation;
-use App\Repository\CitationRepository;
+use App\Repository\ArticleRepository;
 // use App\Service\Input;
 // use App\Service\Redirect;
 // use App\Service\Validation;
 // use App\Service\View;
 
+
+
+
 class HomeController
+
+    
 {
     use View;
 
-    private CitationRepository $citationsRepository;
+    private ArticleRepository $articlesRepository;
 
     public function __construct()
     {
-        $this->citationsRepository = new CitationRepository();
+        $this->articlesRepository = new ArticleRepository();
     }
 
     public function invoke(): string
@@ -27,22 +32,22 @@ class HomeController
             SITE_NAME . ' - HomePage',
             'home.php',
             [
-                'formCitation' => FormCitation::buildAddCitation(),
-                'citations' => $this->citationsRepository->fetchAll(),
+                'formCitation' => FormArticles::buildAddArticle(),
+                'citations' => $this->articlesRepository->fetchAll(),
             ]);
     }
 
-    public function addCitation()
+    public function addArticle()
     {
         if (Input::exists()) {
             $val = new Validation;
-            $val->name('citation')->value(Input::get('citation'))->required();
-            $val->name('auteur')->value(Input::get('auteur'))->required();
+            $val->name('article')->value(Input::get('article'))->required();
+            $val->name('journaliste')->value(Input::get('journaliste'))->required();
             if ($val->isSuccess()) {
-                $citation = Input::get('citation');
-                $auteur = Input::get('auteur');
-                $citation = new Citation($citation, $auteur);
-                $this->citationsRepository->add($citation);
+                $article = Input::get('article');
+                $journaliste = Input::get('journaliste');
+                $article = new Citation($article, $journaliste);
+                $this->articlesRepository->add($article);
                 Redirect::to('/');
             }
         }
