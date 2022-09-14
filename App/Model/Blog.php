@@ -2,14 +2,16 @@
 
 namespace App\Model;
 
-class article {
+class Article {
     private $idArticle;
     private $titre;
-    private $contenu;
+    private $infoSport;
+    private $journaliste;
 
-    public function __construct($titre,$contenu){
+    public function __construct($titre,$infoSport, $journaliste){
         $this->titre = $titre;
-        $this->contenu = $contenu;
+        $this->infoSport = $infoSport;
+        $this->journaliste = $journaliste;
     }
 
     public function getidArticle(){
@@ -18,8 +20,11 @@ class article {
     public function getTitre(){
         return $this->titre;
     }
-    public function getContenu(){
-        return $this->contenu;
+    public function getInfoSport(){
+        return $this->infoSport;
+    }
+    public function getJournaliste(){
+        return $this->journaliste;
     }
     public function setidArticle($idArticle) {
         $this->idArticle = $idArticle;
