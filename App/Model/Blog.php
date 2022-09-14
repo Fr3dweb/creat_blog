@@ -15,10 +15,10 @@ class article {
     public function getidArticle(){
         return $this->idArticle;
     }
-    public function gettitre(){
+    public function getTitre(){
         return $this->titre;
     }
-    public function getcontenu(){
+    public function getContenu(){
         return $this->contenu;
     }
     public function setidArticle($idArticle) {
