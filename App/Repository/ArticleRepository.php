@@ -14,7 +14,7 @@ class ArticleRepository extends Database implements IArticleRepository
     {
         $stmt = $this->db->prepare("INSERT INTO article (journaliste, infoSport, titre) 
         VALUES (:journaliste, :infoSport, :titre)");
-        $stmt->bindValue(':title', $article->getTitre());
+        $stmt->bindValue(':titre', $article->getTitre());
         $stmt->bindValue(':journaliste', $article->getJournaliste());
         $stmt->bindValue(':infoSport', $article->getInfoSport());
         $stmt->execute();
