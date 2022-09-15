@@ -32,8 +32,8 @@ class ArticleRepository extends Database implements IArticleRepository
         $stmt = null;
         $articles = [];
         foreach ($arr as $article) {
-            $p = new Article($article['journaliste'], $article['infoSport'], $article['titre']);
-            $p->setIdArticle($article['id']);
+            $p = new Article($article['titre'], $article['infoSport'], $article['journaliste']);
+            $p->setIdArticle($article['idArticle']);
             $articles[] = $p;
         }
         return $articles;

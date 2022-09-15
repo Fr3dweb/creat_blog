@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">Article</a>
+                <a class="navbar-brand" href="<?= URL_ROOT ?>">Article</a>
             </div>
         </nav>
     </header>
