@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Model\Article;
-use App\Repository\IArticleRepository;
 use App\Service\Database;
 use PDO;
 
@@ -34,7 +33,7 @@ class ArticleRepository extends Database implements IArticleRepository
         $articles = [];
         foreach ($arr as $article) {
             $p = new Article($article['journaliste'], $article['infoSport'], $article['titre']);
-            $p->setId($article['id']);
+            $p->setIdArticle($article['id']);
             $articles[] = $p;
         }
         return $articles;

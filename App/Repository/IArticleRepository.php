@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Model\Article;
 
-interface IBlogRepository
+interface IArticleRepository
 {
     public function add(Article $article);
 
