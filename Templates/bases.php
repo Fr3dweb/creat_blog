@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">Citation</a>
+                <a class="navbar-brand" href="/">Article</a>
             </div>
         </nav>
     </header>
