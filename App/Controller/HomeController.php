@@ -25,7 +25,7 @@ class HomeController
             SITE_NAME . ' - HomePage',
             'home.php',
             [
-                'citations' => $this->articlesRepository->findAll(),
+                'articles' => $this->articlesRepository->findAll(),
             ]
         );
     }
